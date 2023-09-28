@@ -3,15 +3,15 @@ const {createProxyMiddleware} = require("http-proxy-middleware");
 
 const app = express();
 
-app.use("/characters", createProxyMiddleware({
+app.use("/Character", createProxyMiddleware({
     target:"http://localhost:3001/",
     changeOrigin:true
 }))
-app.use("/films", createProxyMiddleware({
+app.use("/Films", createProxyMiddleware({
     target:"http://localhost:3002/",
     changeOrigin:true
 }))
-app.use("/planets", createProxyMiddleware({
+app.use("/Planets", createProxyMiddleware({
     target:"http://localhost:3003/",
     changeOrigin:true
 }))

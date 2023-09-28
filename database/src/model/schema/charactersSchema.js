@@ -31,21 +31,21 @@ characterSchema.statics.insert = async function(character){
 }
 
 // UPDATE (PUT - Actualizar un planeta completo)
-characterSchema.statics.updatePlanet = async function (id, updatedPlanetData) {
+characterSchema.statics.update = async function (id, updatedPlanetData) {
     return await this.findByIdAndUpdate(id, updatedPlanetData, { new: true })
-        .populate("residents", ["_id", "name"])
+        .populate("homeworld", ["_id", "name"])
         .populate("films", ["_id", "title"]);
 }
 
 // PATCH (Actualizar parcialmente el planeta)
-characterSchema.statics.patchPlanet = async function (id, updatedData) {
+characterSchema.statics.patch = async function (id, updatedData) {
     return await this.findByIdAndUpdate(id, { $set: updatedData }, { new: true })
-        .populate("residents", ["_id", "name"])
+        .populate("homeworld", ["_id", "name"])
         .populate("films", ["_id", "title"]);
 }
 
 // DELETE (Eliminar un planeta)
-characterSchema.statics.deletePlanet = async function (id) {
+characterSchema.statics.delete = async function (id) {
     return await this.findByIdAndDelete(id);
 }
 
