@@ -15,6 +15,10 @@ app.use("/planets", createProxyMiddleware({
     target:"http://localhost:3003/",
     changeOrigin:true
 }))
+app.use("/database", createProxyMiddleware({
+    target:"http://localhost:3004/",
+    changeOrigin:true
+}))
 
 const PORT = 8000
 app.listen(PORT, ()=>{
