@@ -4,19 +4,19 @@ const {createProxyMiddleware} = require("http-proxy-middleware");
 const app = express();
 
 app.use("/Character", createProxyMiddleware({
-    target:"http://localhost:3001/",
+    target:"http://character:3001/",
     changeOrigin:true
 }))
 app.use("/Films", createProxyMiddleware({
-    target:"http://localhost:3002/",
+    target:"http://film:3002/",
     changeOrigin:true
 }))
 app.use("/Planets", createProxyMiddleware({
-    target:"http://localhost:3003/",
+    target:"http://planet:3003/",
     changeOrigin:true
 }))
 app.use("/database", createProxyMiddleware({
-    target:"http://localhost:3004/",
+    target:"http://database:3004/",
     changeOrigin:true
 }))
 
