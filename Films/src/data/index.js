@@ -1,6 +1,6 @@
 const axios = require("axios")
   
-const url = "http://database:3004/Film";
+const url = "http://database:3004/Films";
 
 module.exports = {
   list: async () => {
