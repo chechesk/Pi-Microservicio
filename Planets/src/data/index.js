@@ -1,20 +1,26 @@
 const axios = require("axios")
 
-const getdata = async () => {
-    try {
-      const response = await axios.get("http://database:3004/Planet");
-      return response.data; // Utiliza response.data para obtener los datos de la respuesta.
-    } catch (error) {
-      throw error; // Rechaza la promesa si ocurre un error en la solicitud.
-    }
-  };
-
-  
-
-module.exports = {
+  module.exports = {
     list: async () => {
-        const Planet = await getdata(); // Llama a la función getdata para obtener los personajes.
-        return Planet; // Retorna los personajes obtenidos.
-      },
-
-}
+      const { data } = await axios.get(url);
+      return data;
+    },
+    create: async (character) => {
+      // throw new Error("DB ERROR: Method not implemented");
+      const { data } = await axios.post(url,character);
+      return data;
+    },
+    get: async(id) =>{
+      const { data } = await axios.get(`${url}/${id}`),
+      return data
+    },
+    delete: async (id) =>{
+      const { data } = await axios.delete(`${url}/${id}`),
+      return data
+    },
+    update: async (id, character) =>{
+      const {data} = await axios.put(`${url}/${character}`),
+      return data  
+    }
+  }
+  
