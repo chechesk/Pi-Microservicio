@@ -1,13 +1,15 @@
 const axios = require("axios")
 
+  const url = "http://database:3004/Planet"
+  
   module.exports = {
     list: async () => {
       const { data } = await axios.get(url);
       return data;
     },
-    create: async (character) => {
+    create: async (planet) => {
       // throw new Error("DB ERROR: Method not implemented");
-      const { data } = await axios.post(url,character);
+      const { data } = await axios.post(url,planet);
       return data;
     },
     get: async(id) =>{
@@ -18,8 +20,8 @@ const axios = require("axios")
       const { data } = await axios.delete(`${url}/${id}`);
       return data
     },
-    update: async (id, character) =>{
-      const {data} = await axios.put(`${url}/${character}`);
+    update: async (id, planet) =>{
+      const {data} = await axios.put(`${url}/${id}`, planet);
       return data  
     }
   }

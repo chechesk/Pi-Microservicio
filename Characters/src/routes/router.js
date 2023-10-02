@@ -8,10 +8,10 @@ route.get("/", controller.getCharacters);
 
 route.get("/:id", controller.getCharacter);
 
+route.delete("/:id", controller.deleteCharacter);
+
 route.post("/", middlewares.characterValidation, controller.createCharacters);
 
 route.put("/:id", controller.updateCharacter);
-
-route.delete("/:id", controller.deleteCharacter);
 
 module.exports = route;

@@ -26,7 +26,7 @@ router.delete("/:model/:id", modelValidation, async(req,res)=>{
 router.post("/:model", modelValidation, catchedAsync(async (req, res) => {
       const { model } = req.params;
       const data = req.body
-      const response = await store[model]?.insert(data);
+      const response = await store[model].insert(data);
       res.send(response);
     })
   );
@@ -34,12 +34,12 @@ router.post("/:model", modelValidation, catchedAsync(async (req, res) => {
 router.put("/:model", modelValidation, catchedAsync(async (req, res) => {
     const { model } = req.params; 
     const data = req.body
-    const response = await store[model]?.update(data);
+    const response = await store[model].update(data);
     res.send(response);
   })
 );
 
-router.patch("/:model/:id", modelValidation, catchedAsync(async (req, res) => {
+router.patch("/:model/:id", catchedAsync(async (req, res) => {
   const { model, id } = req.params;
   const response = await store[model].patch(id);
   res.send(response);

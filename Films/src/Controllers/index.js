@@ -1,7 +1,7 @@
 module.exports = {
     getFilms: require("./getFilms"),
     getFilm: require("./getFilm"),
-    createPlanets: require("./createFilms"),
-    updateFilm: require("./updateFilms"),
-    deleteFilm: require("./deleteFilms")
+    createFilms: require("./createFilms"),
+    updateFilm: require("./updateFilm"),
+    deleteFilm: require("./deleteFilm")
 }

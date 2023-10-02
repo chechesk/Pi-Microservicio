@@ -7,9 +7,9 @@ module.exports = {
     const { data } = await axios.get(url);
     return data;
   },
-  create: async (character) => {
+  create: async (film) => {
     // throw new Error("DB ERROR: Method not implemented");
-    const { data } = await axios.post(url,character);
+    const { data } = await axios.post(url,film);
     return data;
   },
   get: async(id) =>{
@@ -20,8 +20,8 @@ module.exports = {
     const { data } = await axios.delete(`${url}/${id}`);
     return data
   },
-  update: async (id, character) =>{
-    const {data} = await axios.put(`${url}/${character}`);
+  update: async (id, film) =>{
+    const {data} = await axios.put(`${url}/${id}`, film);
     return data  
   }
 }

@@ -8,7 +8,6 @@ module.exports = {
     return data;
   },
   create: async (character) => {
-    // throw new Error("DB ERROR: Method not implemented");
     const { data } = await axios.post(url,character);
     return data;
   },
@@ -21,7 +20,7 @@ module.exports = {
     return data
   },
   update: async (id, character) =>{
-    const {data} = await axios.put(`${url}/${character}`);
+    const {data} = await axios.put(`${url}/${id}`, character);
     return data  
   }
 }
