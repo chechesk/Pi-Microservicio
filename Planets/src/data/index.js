@@ -11,15 +11,15 @@ const axios = require("axios")
       return data;
     },
     get: async(id) =>{
-      const { data } = await axios.get(`${url}/${id}`),
+      const { data } = await axios.get(`${url}/${id}`);
       return data
     },
     delete: async (id) =>{
-      const { data } = await axios.delete(`${url}/${id}`),
+      const { data } = await axios.delete(`${url}/${id}`);
       return data
     },
     update: async (id, character) =>{
-      const {data} = await axios.put(`${url}/${character}`),
+      const {data} = await axios.put(`${url}/${character}`);
       return data  
     }
   }
