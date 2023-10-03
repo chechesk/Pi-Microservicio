@@ -32,6 +32,6 @@ services:
   database:
     container_name: database
     restart: always
-    build: ./Database
+    build: ./database
     ports: 
       - "3004:3004" 
