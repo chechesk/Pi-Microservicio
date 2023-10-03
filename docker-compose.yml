@@ -4,34 +4,34 @@ services:
   gateway:
     container_name: gateway
     restart: always
-    build: ./gateway
+    build: ./Gateway
     ports: 
       - "8000:8000"
 
   characters:
     container_name: characters
     restart: always
-    build: ./characters
+    build: ./Characters
     ports: 
       - "3001:3001" 
 
   films:
     container_name: films
     restart: always
-    build: ./films
+    build: ./Films
     ports: 
       - "3002:3002" 
 
   planets:
     container_name: planets
     restart: always
-    build: ./planets
+    build: ./Planets
     ports: 
       - "3003:3003" 
       
   database:
     container_name: database
     restart: always
-    build: ./database
+    build: ./Database
     ports: 
       - "3004:3004" 
