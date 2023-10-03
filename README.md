@@ -6,25 +6,28 @@ Gateway Principal: /api
 
 Characters (Personajes):
 
-GET /api/characters: Obtiene una lista de todos los personajes.
-GET /api/characters/{id}: Obtiene información sobre un personaje específico por su ID.
-POST /api/characters: Crea un nuevo personaje proporcionando los datos necesarios.
-PUT /api/characters/{id}: Actualiza un personaje existente identificado por su ID.
-DELETE /api/characters/{id}: Elimina un personaje según su ID.
+GET /api/Characters: Obtiene una lista de todos los personajes.
+GET /api/Characters/{id}: Obtiene información sobre un personaje específico por su ID.
+POST /api/Characters: Crea un nuevo personaje proporcionando los datos necesarios.
+PUT /api/Characters/{id}: Actualiza un personaje existente identificado por su ID.
+DELETE /api/Characters/{id}: Elimina un personaje según su ID.
+
 Films (Películas):
 
-GET /api/films: Obtiene una lista de todas las películas de Star Wars.
-GET /api/films/{id}: Obtiene información sobre una película específica por su ID.
-POST /api/films: Crea una nueva película proporcionando los datos necesarios.
-PUT /api/films/{id}: Actualiza una película existente identificada por su ID.
-DELETE /api/films/{id}: Elimina una película según su ID.
+GET /Films: Obtiene una lista de todas las películas de Star Wars.
+GET /Films/{id}: Obtiene información sobre una película específica por su ID.
+POST /Films: Crea una nueva película proporcionando los datos necesarios.
+PUT /Films/{id}: Actualiza una película existente identificada por su ID.
+DELETE /Films/{id}: Elimina una película según su ID.
+
 Planets (Planetas):
 
-GET /api/planets: Obtiene una lista de todos los planetas de Star Wars.
-GET /api/planets/{id}: Obtiene información sobre un planeta específico por su ID.
-POST /api/planets: Crea un nuevo planeta proporcionando los datos necesarios.
-PUT /api/planets/{id}: Actualiza un planeta existente identificado por su ID.
-DELETE /api/planets/{id}: Elimina un planeta según su ID.
+GET /Planets: Obtiene una lista de todos los planetas de Star Wars.
+GET /Planets/{id}: Obtiene información sobre un planeta específico por su ID.
+POST /aPlanets: Crea un nuevo planeta proporcionando los datos necesarios.
+PUT /Planets/{id}: Actualiza un planeta existente identificado por su ID.
+DELETE /Planets/{id}: Elimina un planeta según su ID.
+
 Requisitos
 Docker instalado en tu máquina local.
 Acceso a una cuenta de Google Cloud para el almacenamiento de datos.
@@ -60,7 +63,7 @@ docker network create star_wars // nombre de la red para que se conecten los mic
 
 bash
 Copy code
-docker run -d -p 8080:8080 network=star_wars ==name=gateway gateway
+docker run -d -p 8000:8000 network=star_wars ==name=gateway gateway
 cada uno de los microservicio tiene su puerto y su nombre a conectar en la red
 
 se tiene que hacer con cada uno de los micro servicios aplicados
@@ -82,10 +85,15 @@ Copia el código del microservicio en el servidor.
 
 Instala Docker en el servidor si aún no está instalado.
 
+Instala
+Sudo git
+Sudo docker
+Sudo docker-compose
+
 Construye la imagen de Docker como se mencionó anteriormente.
 
 Ejecuta el contenedor Docker en el servidor.
 
 Asegúrate de configurar el firewall y las reglas de seguridad para permitir el acceso a través del puerto 8080 (o el puerto que hayas configurado).
 
-El microservicio estará disponible en http://tu-ip-del-servidor:8080.
+El microservicio estará disponible en http://34.68.75.188/:8000.
