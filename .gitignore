@@ -3,6 +3,10 @@
 .env.test
 
 # Dependency directories
+characters/node_modules
+database/node_modules
+films/node_modules
+planets/node_modules
 node_modules/
 jspm_packages/
 
